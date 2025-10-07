@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/joaquin/Documents/GitHub/image-compressor/app/layout":["static/media/4481407b8bd566c8-s.p.ttf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
