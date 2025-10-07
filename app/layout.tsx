@@ -9,14 +9,14 @@ const plusJakartaSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Try it on",
-  description: "Yes, try it on.",
+  title: "Beaver compressor",
+  description: "Yes, Beaver compressor.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className="dark">
@@ -24,5 +24,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }
