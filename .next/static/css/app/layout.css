@@ -563,9 +563,6 @@ font-display: block;
   .text-right {
     text-align: right;
   }
-  .font-mono {
-    font-family: var(--font-geist-mono);
-  }
   .font-sans {
     font-family: var(--font-geist-sans);
   }

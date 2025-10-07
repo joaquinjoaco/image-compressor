@@ -283,7 +283,7 @@ export function ImageUploadClient({
                         setMaxWidth(Math.min(7680, Math.max(10, val)));
                       }}
                       min={10}
-                      max={7680}
+                      max={3840}
                       disabled={uploading}
                       className="w-20 px-2 py-1 text-sm text-right border rounded bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                     />
@@ -293,9 +293,9 @@ export function ImageUploadClient({
                 <Slider
                   value={[maxWidth]}
                   onValueChange={(value) => setMaxWidth(value[0])}
-                  min={10}
-                  max={7680}
-                  step={10}
+                  min={5}
+                  max={3840}
+                  step={1}
                   disabled={uploading}
                   className="w-full"
                 />
