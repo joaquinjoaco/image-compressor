@@ -239,11 +239,23 @@ export function ImageUploadClient({
           {file && (
             <div className="space-y-4 p-4 border rounded-lg bg-muted/20">
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
                   <label className="text-sm font-medium">Calidad</label>
-                  <span className="text-sm text-muted-foreground font-mono">
-                    {quality}%
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="number"
+                      value={quality}
+                      onChange={(e) => {
+                        const val = parseInt(e.target.value) || 1;
+                        setQuality(Math.min(100, Math.max(1, val)));
+                      }}
+                      min={1}
+                      max={100}
+                      disabled={uploading}
+                      className="w-16 px-2 py-1 text-sm text-right border rounded bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                    <span className="text-sm text-muted-foreground">%</span>
+                  </div>
                 </div>
                 <Slider
                   value={[quality]}
@@ -260,24 +272,38 @@ export function ImageUploadClient({
               </div>
 
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
                   <label className="text-sm font-medium">Ancho Máximo</label>
-                  <span className="text-sm text-muted-foreground font-mono">
-                    {maxWidth}px
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="number"
+                      value={maxWidth}
+                      onChange={(e) => {
+                        const val = parseInt(e.target.value) || 10;
+                        setMaxWidth(Math.min(7680, Math.max(10, val)));
+                      }}
+                      min={10}
+                      max={7680}
+                      disabled={uploading}
+                      className="w-20 px-2 py-1 text-sm text-right border rounded bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                    <span className="text-sm text-muted-foreground">px</span>
+                  </div>
                 </div>
                 <Slider
                   value={[maxWidth]}
                   onValueChange={(value) => setMaxWidth(value[0])}
-                  min={5}
-                  max={3840}
-                  step={80}
+                  min={10}
+                  max={7680}
+                  step={10}
                   disabled={uploading}
                   className="w-full"
                 />
-                <p className="text-xs text-muted-foreground">
-                  La imagen se redimensionará, esta opción es la mas efectiva
-                </p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>
+                    La imagen se redimensionará, esta opción es la más efectiva
+                  </span>
+                </div>
               </div>
             </div>
           )}
