@@ -31,7 +31,7 @@ export function ImageUploadClient({
   const [quality, setQuality] = React.useState(70);
   const [maxWidth, setMaxWidth] = React.useState(1920);
 
-  const maxSize = 10485760; // 10MB for images
+  const maxSize = 20971520; // 20MB for images
 
   // Cleanup preview on unmount
   React.useEffect(() => {
@@ -167,7 +167,7 @@ export function ImageUploadClient({
             </span>
             <br />
             <span className="text-xs font-bold">
-              (JPG, PNG, WEBP - hasta 10MB)
+              (JPG, PNG, WEBP - hasta 20MB)
             </span>
           </p>
         </div>
@@ -195,7 +195,7 @@ export function ImageUploadClient({
                     isDragActive ? "opacity-0" : ""
                   }`}
                 >
-                  JPG, JPEG, PNG, WEBP (máx. 10MB)
+                  JPG, JPEG, PNG, WEBP (máx. 20MB)
                 </p>
               </div>
             </div>
